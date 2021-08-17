@@ -28,7 +28,32 @@
 			<a href="#" class="carrito-nav">CARRITO</a>
 		</nav>
 
-		<div class="slider">carrusel</div>
+		<div class="slider">
+			
+				<div class="slideshow-container">
+			<div class="mySlides fade">
+
+		    	<div class="numbertext">1 / 3</div>
+				<img class="img-carrousel" src="assets/products/img1.jpeg">
+				<div class="text">caption text</div>
+			</div>
+			<div class="mySlides fade">
+
+		    	<div class="numbertext">2 / 3</div>
+				<img class="img-carrousel" src="assets/products/img2.jpeg">
+				<div class="text">caption two</div>
+			</div>
+			<div class="mySlides fade">
+
+		    	<div class="numbertext">3 / 3</div>
+				<img class="img-carrousel" src="assets/products/img3.jpeg">
+				<div class="text">caption three</div>
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+
+		</div>
 
 		<div class="destacado">
 			<h3>PRODUCTOS DESTACADOS</h3>
@@ -121,6 +146,25 @@
 		</footer>
 
 	</div>
+
+	<script type="text/javascript">
+		var slideIndex = 0;
+
+showSlides();
+
+function showSlides() {
+       var i;
+       var slides = document.getElementsByClassName("mySlides");
+       for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+       }
+
+       slideIndex++;
+       if(slideIndex > slides.length) {slideIndex = 1}
+       slides[slideIndex-1].style.display = "block";
+       setTimeout(showSlides,5000);
+}
+	</script>
 
 </body>
 </html>

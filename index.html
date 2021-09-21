@@ -13,13 +13,31 @@
 	<div class="absolute-container">
 		
 		<header>
-			<a href="#" class="menu-header">
-				<i class="fas fa-bars"></i></a>
-			<div class="nombre-menu-header">	
-			<p class="p-m-h">MENU</p></div>
+
 			<div class="buscador">
-				<i class="search fas fa-search"></i>
+
+				<button class="botton-search" type="button">
+
+					<i class="search fas fa-search"></i>
+
+				</button>	
+				
+				<input type="search" class="search-mobile" name="searchMobile" placeholder="Buscar productos...">
+
 			</div>
+			
+			<ul class="enlaces-menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Equipo</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+
+			<button class="ham" type="button">   
+                <span class="br-1"></span>
+                <span class="br-2"></span>
+                <span class="br-3"></span>
+            </button>
 		</header>
 
 		<nav>
@@ -165,6 +183,7 @@ function showSlides() {
        setTimeout(showSlides,5000);
 }
 	</script>
+	<script src="main.js"></script>
 
 </body>
 </html>

@@ -15,7 +15,7 @@ body{
 	font-family: "Roboto Condensed", sans-serif;
 	background: #fff;
 	display: grid;
-	grid-template-rows: 50px 46px 210px 50px 1fr 190px 20px;
+	grid-template-rows: 50px 210px 50px 1fr 190px 20px;
 	grid-template-columns: repeat(1, minmax(260px,766px));
 }
 
@@ -28,53 +28,173 @@ header{
 	background-color: #BF9B77;
 }
 
-.menu-header{
-	text-decoration: none;
-	font-size: 22px;
-	margin-left: 10px;
-	display: flex;
-	align-items: center;
-	flex-grow: ;
-	color: #fff;
 
-}
+.ham{
+    /*display:none;¨*/
+    display: grid;
+    z-index: 150;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    flex-grow: 2;
+    background-color:transparent;
+    max-width: 78px;
+    cursor: pointer;
+    border:none;
+    padding: 0;
+    transition: 0.2s  0.1s;
+    }
+    
+    .ham span{
+    
+    	justify-self: center;
+    	margin: 1% 0 1% 0;
+        background-color: #f3f3f3;
+        min-height: 3px;
+        min-width: 30px;
+        max-width: 50px;
+        flex-grow: 1;
+        width: 65%;
+        border-radius:8px;    
+    }
 
-.nombre-menu-header{
-	margin-left: 10px;
-	color: #fff;
-	align-items: center;
-	display: flex;
-	font-weight: 0;
-	flex-grow: ;
-}
+  	.br-1{
+  		align-self: flex-end;
+  	}
 
-.p-m-h{
- 	font-size: 18px;
-}
+  	.br-3{
+  		align-self: flex-start;
+  	}
+
+.enlaces-menu{
+		z-index: 100;
+		position: absolute;
+		width: 100vw;
+		height: 60vh;
+      	display:none;
+      	flex-direction: column;
+      	justify-content: space-around;
+      	padding: 5vh 0 0 0 ;
+      	background-color: #DEBA71;
+      	opacity:0;
+        transition: opacity 1s ease-out;
+  }
+  .enlaces-menu li{
+  		display: flex;
+  		justify-content: center;
+  	  	max-width: 100vw;
+      	list-style-type: none;
+      	transition: 0.3s;
+  }
+
+  .enlaces-menu li a{
+  		margin: 0;
+      	text-decoration:none;
+      	font-size: 1.8rem;
+      	color:#f3f3f3;
+      	font-weight:600;
+  }
+  .enlaces-menu li:hover{
+      background-color: #BF9B77;
+      width: 100%;
+      padding: 3% 0;
+  }
+
+
+
+/*    ANIMACION MENU HAMBURGUESA    */
+
+
+@keyframes muestraMenu {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .enlaces-menu.activado{
+      display:flex; 
+      max-width: 100%;
+      animation: muestraMenu 350ms ease-in-out both;
+  }
+
+  .br-1.animado{
+    transform: rotate(-45deg) translate(-10px,8px);
+  }
+  
+  .br-2.animado{
+    opacity: 0;
+  }
+  .br-3.animado{
+    transform: rotate(45deg) translate(-10px,-8px );
+  }
+
+ 
 
 .buscador{
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
-	flex-grow: 1;
+	flex-grow: 4;
 	font-size: 22px;
 	color: #fff;
 }
 
-.search{
-	margin-right: 13px;
+.botton-search{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80%;
+	max-width: 50px;
+	margin: 0 7px; 
+	background-color: #BF9B77;
+	border:none;
+	
 
 }
+
+.buscador i {
+	
+	font-size: 25px;
+	font-weight:1%;
+	color: #fff;
+	
+
+}
+
+.search-mobile{
+	margin: 0;
+	padding: 0;
+	display: none;
+	
+	width: 90%;
+	height: 55%;
+	border-radius: 13px;
+	border: none;
+	text-align: left 10px;
+}
+
+@keyframes muestraSearch {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+.search-mobile.despliegue{
+	display: flex;
+	animation: muestraSearch 350ms ease-in-out both;
+}
+
+
+.search-mobile::placeholder {
+	color: #9b9b9b;
+	padding-left: 10px;
+}
+
 	
 
 /*     NAV    */
 
 
 nav{
+	display: none;
 	position: relative;
-	display:flex;
 	background-color: #fff;
-	border-bottom: solid 1px #BF9B77;
 	align-items: center;
 	justify-content: center;
 }
@@ -89,9 +209,6 @@ nav{
 	text-decoration: none;
 	height: 100%;
 }
-.inicio-nav:focus{
-	border-bottom: 2px solid #BF9B77;
-}
 
 .productos-nav{
 	display: flex;
@@ -102,9 +219,6 @@ nav{
 	align-items: center;
 	height: 100%;
 }
-.productos-nav:focus{
-	border-bottom: solid 2px #BF9B77;
-}
 
 .carrito-nav{
 	display: flex;
@@ -114,9 +228,6 @@ nav{
 	text-decoration: none;
 	align-items: center;
 	height: 100%;
-}
-.carrito-nav:focus{
-	border-bottom: 2px solid #BF9B77;
 }
 
 
@@ -311,5 +422,13 @@ footer{
 .footer-d{
 	font-size: 12px;
 }
+
+}
+
+
+
+@media screen and (min-width: 766px){
+
+
 
 }

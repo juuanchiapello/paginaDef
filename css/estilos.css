@@ -109,6 +109,21 @@ header{
     to {opacity: 1;}
   }
 
+@keyframes muestraX-brA {
+    from {}
+    to {transform:rotate(-45deg) translate(-10px,6px); }
+  }
+
+@keyframes muestraX-brB {
+    from {}
+    to {opacity: 0;}
+  }
+
+@keyframes muestraX-brC {
+    from {}
+    to {transform: rotate(45deg) translate(-10px,-6px );}
+  }
+
   .enlaces-menu.activado{
       display:flex; 
       max-width: 100%;
@@ -116,14 +131,17 @@ header{
   }
 
   .br-1.animado{
-    transform: rotate(-45deg) translate(-10px,8px);
+  	animation: muestraX-brA 400ms ease-in-out both;
+    /*transform: rotate(-45deg) translate(-10px,6px);*/
   }
   
   .br-2.animado{
-    opacity: 0;
+  	animation: muestraX-brB 100ms ease-in-out both;
+    /*opacity: 0;*/
   }
   .br-3.animado{
-    transform: rotate(45deg) translate(-10px,-8px );
+  	animation: muestraX-brC 400ms ease-in-out both;
+    /*transform: rotate(45deg) translate(-10px,-6px );*/
   }
 
  
